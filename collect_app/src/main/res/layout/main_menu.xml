@@ -36,12 +36,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/map_box_initialization_fragment" />
 
+            <!-- Grille responsive avec 2 colonnes pour les MainMenuButton -->
             <org.odk.collect.android.mainmenu.StartNewFormButton
                 android:id="@+id/enter_data"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_extra_small"
-                app:layout_constraintWidth_max="@dimen/max_content_width"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/google_drive_deprecation_banner" />
@@ -51,9 +51,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:icon="@drawable/ic_edit_24"
-                app:layout_constraintEnd_toEndOf="@id/enter_data"
-                app:layout_constraintStart_toStartOf="@id/enter_data"
+                app:layout_constraintEnd_toEndOf="@+id/enter_data"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/enter_data"
+                app:layout_constraintWidth_percent="0.5"
                 app:name="@string/review_data" />
 
             <org.odk.collect.android.mainmenu.MainMenuButton
@@ -61,19 +63,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:icon="@drawable/ic_send_24"
-                app:layout_constraintEnd_toEndOf="@id/enter_data"
-                app:layout_constraintStart_toStartOf="@id/enter_data"
-                app:layout_constraintTop_toBottomOf="@id/review_data"
+                app:layout_constraintWidth_percent="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/review_data"
+                app:layout_constraintTop_toBottomOf="@id/enter_data"
                 app:name="@string/send_data"
-                app:highlightable="true"/>
+                app:highlightable="true" />
 
             <org.odk.collect.android.mainmenu.MainMenuButton
                 android:id="@+id/view_sent_forms"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:icon="@drawable/ic_check_circle_24"
-                app:layout_constraintEnd_toEndOf="@id/enter_data"
-                app:layout_constraintStart_toStartOf="@id/enter_data"
+                app:layout_constraintWidth_percent="0.5"
+                app:layout_constraintEnd_toEndOf="@id/review_data"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/send_data"
                 app:name="@string/view_sent_forms" />
 
@@ -82,9 +86,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:icon="@drawable/ic_download_24"
-                app:layout_constraintEnd_toEndOf="@id/enter_data"
-                app:layout_constraintStart_toStartOf="@id/enter_data"
-                app:layout_constraintTop_toBottomOf="@id/view_sent_forms"
+                app:layout_constraintWidth_percent="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/view_sent_forms"
+                app:layout_constraintTop_toBottomOf="@id/send_data"
                 app:name="@string/get_forms" />
 
             <org.odk.collect.android.mainmenu.MainMenuButton
@@ -92,8 +97,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:icon="@drawable/ic_delete_24"
-                app:layout_constraintEnd_toEndOf="@id/enter_data"
-                app:layout_constraintStart_toStartOf="@id/enter_data"
+                app:layout_constraintWidth_percent="0.5"
+                app:layout_constraintEnd_toEndOf="@id/view_sent_forms"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/get_forms"
                 app:name="@string/manage_files" />
 
