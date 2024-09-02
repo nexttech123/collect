@@ -114,6 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_standard"
         android:text="@string/about_preferences"
+        android:visibility="gone"
         app:icon="@drawable/ic_outline_info_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
