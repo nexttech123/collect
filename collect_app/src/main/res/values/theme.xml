@@ -146,10 +146,16 @@
     </style>
 
     <style name="Theme.Collect.SplashScreen" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/colorSurface</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_screen_icon</item>
+        <!-- Définir le fond de l'écran de démarrage sur transparent -->
+        <item name="windowSplashScreenBackground">@android:color/transparent</item>
+
+        <!-- Utiliser l'icône avec fond transparent -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/coffee_plant</item>
+
+        <!-- Thème appliqué après l'écran de démarrage -->
         <item name="postSplashScreenTheme">@style/Theme.Collect</item>
     </style>
+
 
     <style name="Theme.Collect.Dialog.Alert" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="buttonBarPositiveButtonStyle">@style/Widget.Collect.Dialog.PositiveButton</item>

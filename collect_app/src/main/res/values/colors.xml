@@ -23,5 +23,9 @@
     <color name="colorSurfaceInverse">#003547</color>
     <color name="colorOnSurfaceInverse">#E1F4FF</color>
 
+    <color name="colorPrimaryLight">#BB86FC</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="color_on_surface_medium_emphasis">#757575</color>
+
     <bool name="lightStatusBar">true</bool>
 </resources>

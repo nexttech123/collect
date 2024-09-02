@@ -28,14 +28,18 @@ class MainMenuButton(context: Context, attrs: AttributeSet?) : FrameLayout(conte
             val buttonName = this.getString(R.styleable.MainMenuButton_name)
             highlightable = this.getBoolean(R.styleable.MainMenuButton_highlightable, false)
 
-            binding.icon.setImageResource(buttonIcon)
+            // Configure le texte au-dessus de l'icône
             binding.name.text = buttonName
+            binding.icon.setImageResource(buttonIcon)
         }
 
         badge = BadgeDrawable.create(context).apply {
             backgroundColor = getThemeAttributeValue(context, com.google.android.material.R.attr.colorPrimary)
             badgeGravity = BadgeDrawable.BOTTOM_END
         }
+
+        // Supprime les coins arrondis du bouton
+        background = null
     }
 
     val text: String

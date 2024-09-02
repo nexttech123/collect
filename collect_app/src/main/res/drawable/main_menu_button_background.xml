@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/color_on_surface_low_emphasis">
-    <item>
-        <shape android:shape="rectangle">
-            <corners android:radius="100dp" />
-            <solid android:color="?colorSurfaceContainerLow" />
-        </shape>
-    </item>
-</ripple>
+<!-- res/drawable/main_menu_button_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Définir les bordures -->
+    <solid android:color="@android:color/transparent" /> <!-- Fond transparent -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/colorPrimary" /> <!-- Couleur de la bordure -->
+
+    <!-- Définir les coins arrondis -->
+    <corners android:radius="8dp" /> <!-- Rayon des coins -->
+</shape>
