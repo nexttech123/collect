@@ -781,7 +781,7 @@ Birashoboka ko ari zimwe zashyizwemo mubihe bitandukanye cgw ziturutse ahatanduk
      ##############################################-->
   <!--Tag line displayed on the first launch screen. The text should be split into two lines with \n. Please
     select the wording and where to put the \n for maximum impact in your language.-->
-  <string name="tagline">Kusanya amakuru/aho ariho hose</string>
+  <string name="tagline">CultivaSynca Kusanya amakuru/aho ariho hose</string>
   <!--Text for the button that allows for configuring a project by scanning a QR code. Should be short-->
   <string name="configure_with_qr_code">Byihuze hifashishijwe kode ya QR</string>
   <!--Text for the button that allows for manually entering project details. Should be short-->

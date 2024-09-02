@@ -909,7 +909,7 @@
      ##############################################-->
   <!--Tag line displayed on the first launch screen. The text should be split into two lines with \n. Please
     select the wording and where to put the \n for maximum impact in your language.-->
-  <string name="tagline">Collecte de données\nsans frontières</string>
+  <string name="tagline">CultivaSynca ollecte de données\nsans frontières</string>
   <!--Text for the button that allows for configuring a project by scanning a QR code. Should be short-->
   <string name="configure_with_qr_code">Configurer par QR code</string>
   <!--Text for the button that allows for manually entering project details. Should be short-->
