@@ -40,6 +40,11 @@ open class ServerFormsDetailsFetcher(
     }
 
     open fun updateCredentials(webCredentialsUtils: WebCredentialsUtils) {
+        // Récupérer les détails du serveur à partir des préférences
+
+        val url = webCredentialsUtils.getServerUrlFromPreferences()
+        val username = webCredentialsUtils.getUserNameFromPreferences()
+        val password = webCredentialsUtils.getPasswordFromPreferences()
         (formSource as OpenRosaFormSource).updateWebCredentialsUtils(webCredentialsUtils)
     }
 
@@ -131,4 +136,6 @@ open class ServerFormsDetailsFetcher(
             newMediaFile.hash == it.getMd5Hash()
         }
     }
+
+
 }

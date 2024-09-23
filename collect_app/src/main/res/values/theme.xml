@@ -150,7 +150,7 @@
         <item name="windowSplashScreenBackground">@android:color/transparent</item>
 
         <!-- Utiliser l'icône avec fond transparent -->
-        <item name="windowSplashScreenAnimatedIcon">@drawable/coffee_plant</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_screen_icon</item>
 
         <!-- Thème appliqué après l'écran de démarrage -->
         <item name="postSplashScreenTheme">@style/Theme.Collect</item>

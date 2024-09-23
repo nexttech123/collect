@@ -1,5 +1,7 @@
 package org.odk.collect.android.projects
 
+import com.google.gson.JsonObject
+import com.google.gson.JsonParser
 import org.odk.collect.projects.Project
 import org.odk.collect.projects.ProjectsRepository
 import org.odk.collect.settings.ODKAppSettingsImporter
@@ -27,4 +29,5 @@ class ProjectCreator(
             settingsImportingResult
         }
     }
+
 }

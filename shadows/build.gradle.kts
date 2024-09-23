@@ -40,7 +40,6 @@ android {
 dependencies {
     implementation(Dependencies.robolectric)
     implementation(Dependencies.androidx_appcompat)
-
     testImplementation(Dependencies.junit)
     testImplementation(Dependencies.hamcrest)
 }

@@ -30,7 +30,8 @@ class CoroutineAndWorkManagerScheduler(
         spec: TaskSpec,
         inputData: Map<String, String>,
         networkConstraint: Scheduler.NetworkType?
-    ) {
+    )
+    {
         val constraintNetworkType = when (networkConstraint) {
             Scheduler.NetworkType.WIFI -> NetworkType.UNMETERED
             Scheduler.NetworkType.CELLULAR -> NetworkType.METERED
@@ -64,7 +65,8 @@ class CoroutineAndWorkManagerScheduler(
         spec: TaskSpec,
         repeatPeriod: Long,
         inputData: Map<String, String>
-    ) {
+    )
+    {
         val constraints = Constraints.Builder()
             .setRequiredNetworkType(NetworkType.CONNECTED)
             .build()

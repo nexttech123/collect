@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#4cbcf0</color>
+    <color name="colorPrimary">#08b28b</color>
     <color name="colorOnPrimary">#003547</color>
     <color name="colorPrimaryContainer">#004d65</color>
     <color name="colorOnPrimaryContainer">#bfe9ff</color>
@@ -22,6 +22,6 @@
     <color name="colorSurfaceContainerHighest">#162f3b</color>
     <color name="colorSurfaceInverse">#BFE9FF</color>
     <color name="colorOnSurfaceInverse">#001F2A</color>
-
+    <color name="back_graund_main_menu_button">#202426</color>
     <bool name="lightStatusBar">false</bool>
 </resources>
