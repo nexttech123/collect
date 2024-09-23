@@ -80,7 +80,7 @@ the specific language governing permissions and limitations under the License.
     <application
         android:name=".application.Collect"
         android:allowBackup="true"
-        android:icon="@drawable/coffee_plant"
+        android:icon="@drawable/ic_splash_screen_icon"
         android:installLocation="auto"
         android:label="@string/collect_app_name"
         android:largeHeap="true"

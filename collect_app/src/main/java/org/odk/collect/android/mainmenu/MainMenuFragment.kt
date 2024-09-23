@@ -1,5 +1,6 @@
 package org.odk.collect.android.mainmenu
 
+import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -121,7 +122,9 @@ class MainMenuFragment(
         val projectsMenuItem = menu.findItem(org.odk.collect.android.R.id.projects)
         (projectsMenuItem.actionView as ProjectIconView).apply {
             project = currentProjectViewModel.currentProject.value
-            setOnClickListener { onOptionsItemSelected(projectsMenuItem) }
+            setOnClickListener {
+                onOptionsItemSelected(projectsMenuItem)
+            }
             contentDescription = getString(string.projects)
         }
     }
@@ -163,9 +166,9 @@ class MainMenuFragment(
     }
 
     private fun initButtons(binding: MainMenuBinding) {
+
         binding.enterData.setOnClickListener {
             ActionRegister.actionDetected()
-
             formEntryFlowLauncher.launch(
                 Intent(requireActivity(), BlankFormListActivity::class.java)
             )
@@ -192,19 +195,22 @@ class MainMenuFragment(
         }
 
         binding.viewSentForms.setOnClickListener {
-            startActivity(
-                Intent(requireActivity(), InstanceChooserList::class.java).apply {
-                    putExtra(
-                        ApplicationConstants.BundleKeys.FORM_MODE,
-                        ApplicationConstants.FormModes.VIEW_SENT
-                    )
-                }
-            )
+            var intent =Intent(requireActivity(), InstanceChooserList::class.java).apply {
+                putExtra(
+                    ApplicationConstants.BundleKeys.FORM_MODE,
+                    ApplicationConstants.FormModes.VIEW_SENT
+                )
+            }
+            startActivity(intent)
+            /*startActivity(intent,
+                ActivityOptions.makeSceneTransitionAnimation(requireActivity()).toBundle())*/
         }
 
         binding.getForms.setOnClickListener {
             val intent = Intent(requireContext(), FormDownloadListActivity::class.java)
-            startActivity(intent)
+           /* startActivity(intent)*/
+            startActivity(intent,
+                ActivityOptions.makeSceneTransitionAnimation(requireActivity()).toBundle())
         }
 
         binding.manageForms.setOnClickListener {

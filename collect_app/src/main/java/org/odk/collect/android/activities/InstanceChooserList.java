@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.transition.Explode;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.TextView;
@@ -112,6 +113,9 @@ public class InstanceChooserList extends AppListActivity implements AdapterView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form_chooser_list);
         DaggerUtils.getComponent(this).inject(this);
+
+        // Set an exit transition
+        getWindow().setExitTransition(new Explode());
 
         String formMode = getIntent().getStringExtra(ApplicationConstants.BundleKeys.FORM_MODE);
         if (formMode == null || ApplicationConstants.FormModes.EDIT_SAVED.equalsIgnoreCase(formMode)) {

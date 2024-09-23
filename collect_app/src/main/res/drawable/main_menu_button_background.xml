@@ -1,11 +1,10 @@
 <!-- res/drawable/main_menu_button_background.xml -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Définir les bordures -->
-    <solid android:color="@android:color/transparent" /> <!-- Fond transparent -->
+    <solid android:color="@color/back_graund_main_menu_button" /> <!-- Fond transparent -->
     <stroke
         android:width="2dp"
         android:color="@color/colorPrimary" /> <!-- Couleur de la bordure -->
-
     <!-- Définir les coins arrondis -->
     <corners android:radius="8dp" /> <!-- Rayon des coins -->
 </shape>

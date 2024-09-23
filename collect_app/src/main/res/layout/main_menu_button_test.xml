@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="140dp"
+    android:layout_height="80dp"
+    android:layout_marginVertical="@dimen/margin_extra_small"
+    android:layout_marginHorizontal="@dimen/margin_standard"
+    android:elevation="1dp"
+    android:background="@drawable/main_menu_button_background">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:layout_toEndOf="@+id/number"
+        android:textAlignment="center"
+        android:textAppearance="?textAppearanceLabelExtraLarge"
+        tools:text="Fill Blank Form" />
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_extra_large"
+        android:textAppearance="?textAppearanceLabelExtraLarge"
+        app:layout_constraintBottom_toBottomOf="@id/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/name"
+        tools:text="10"
+        style="@style/TextViewButton"/>
+
+    <ImageView
+        android:layout_marginVertical="5dp"
+        android:layout_below="@+id/name"
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:foregroundGravity="center"
+        app:layout_constraintTop_toTopOf="@id/name"
+        tools:src="@drawable/ic_delete" />
+
+</RelativeLayout>

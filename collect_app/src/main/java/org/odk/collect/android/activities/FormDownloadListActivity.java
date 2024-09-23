@@ -20,9 +20,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.transition.Explode;
 import android.util.SparseBooleanArray;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
@@ -147,9 +149,16 @@ public class FormDownloadListActivity extends FormListActivity implements FormLi
                 .get(FormDownloadListViewModel.class);
 
         init(savedInstanceState);
+
+      /*  // Inside your activity (if you did not enable transitions in your theme)
+        getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
+*/
+      // Set an exit transition
+        getWindow().setExitTransition(new Explode());
     }
 
     private void init(Bundle savedInstanceState) {
+
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             if (bundle.containsKey(ApplicationConstants.BundleKeys.FORM_IDS)) {
@@ -224,13 +233,15 @@ public class FormDownloadListActivity extends FormListActivity implements FormLi
                 DialogFragmentUtils.dismissDialog(RefreshFormListDialogFragment.class, getSupportFragmentManager());
                 downloadFormsTask = null;
             }
-        } else if (getLastCustomNonConfigurationInstance() instanceof DownloadFormsTask) {
+        }
+        else if (getLastCustomNonConfigurationInstance() instanceof DownloadFormsTask) {
             downloadFormsTask = (DownloadFormsTask) getLastCustomNonConfigurationInstance();
             if (downloadFormsTask.getStatus() == AsyncTask.Status.FINISHED) {
                 DialogFragmentUtils.dismissDialog(RefreshFormListDialogFragment.class, getSupportFragmentManager());
                 downloadFormsTask = null;
             }
-        } else if (viewModel.getFormDetailsByFormId().isEmpty()
+        }
+        else if (viewModel.getFormDetailsByFormId().isEmpty()
                 && getLastCustomNonConfigurationInstance() == null
                 && !viewModel.wasLoadingCanceled()) {
             // first time, so get the formlist
@@ -251,6 +262,9 @@ public class FormDownloadListActivity extends FormListActivity implements FormLi
                 )
         );
     }
+
+
+
 
     private void clearChoices() {
         listView.clearChoices();

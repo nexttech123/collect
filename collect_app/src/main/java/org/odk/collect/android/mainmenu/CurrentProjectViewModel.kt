@@ -13,6 +13,7 @@ class CurrentProjectViewModel(
 ) : ViewModel() {
 
     private val _currentProject by lazy { MutableNonNullLiveData(projectsDataService.getCurrentProject()) }
+
     val currentProject: NonNullLiveData<Project.Saved> by lazy { _currentProject }
 
     fun setCurrentProject(project: Project.Saved) {

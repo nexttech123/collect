@@ -82,6 +82,7 @@ import org.odk.collect.shared.injection.SupplierObjectProvider;
 import org.odk.collect.shared.settings.Settings;
 import org.odk.collect.shared.strings.Md5;
 import org.odk.collect.strings.localization.LocalizedApplication;
+import org.odk.collect.utilities.UserAgentProvider;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -99,7 +100,8 @@ public class Collect extends Application implements
         EntitiesDependencyComponentProvider,
         SelfieCameraDependencyComponentProvider,
         GoogleMapsDependencyComponentProvider,
-        DrawDependencyComponentProvider {
+        DrawDependencyComponentProvider
+{
 
     public static String defaultSysLanguage;
     private static Collect singleton;
@@ -151,18 +153,17 @@ public class Collect extends Application implements
     public void onCreate() {
         super.onCreate();
         singleton = this;
-
         CrashHandler.install(this).launchApp(
                 () -> ExternalFilesUtils.testExternalFilesAccess(this),
                 () -> {
                     setupDagger();
                     DaggerUtils.getComponent(this).inject(this);
-
                     applicationComponent.applicationInitializer().initialize();
                     fixGoogleBug154855417();
                     setupStrictMode();
                 }
         );
+
     }
 
     /**
