@@ -17,7 +17,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_standard"
         android:ellipsize="end"
-        android:maxLines="1"
         android:textAppearance="?textAppearanceLabelExtraLarge"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

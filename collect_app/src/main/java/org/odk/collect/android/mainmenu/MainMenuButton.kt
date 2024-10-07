@@ -34,7 +34,7 @@ class MainMenuButton(context: Context, attrs: AttributeSet?) : FrameLayout(conte
             binding.icon.setImageResource(buttonIcon)
 
             // Appeler la fonction pour gérer le dépassement du texte
-            //enableTextOverflowHandling()
+            enableTextOverflowHandling()
         }
 
         badge = BadgeDrawable.create(context).apply {
@@ -85,7 +85,7 @@ class MainMenuButton(context: Context, attrs: AttributeSet?) : FrameLayout(conte
         }
     }
 
-
+    //Function allows you to scroll the text if you go beyond the corresponding context
     fun enableTextOverflowHandling() {
         binding.name.viewTreeObserver.addOnGlobalLayoutListener {
             val textViewWidth = binding.name.width
@@ -94,7 +94,7 @@ class MainMenuButton(context: Context, attrs: AttributeSet?) : FrameLayout(conte
             // Si le texte dépasse la largeur de la TextView
             if (textWidth > textViewWidth) {
                 // Activer le défilement horizontal pour gérer le dépassement
-                binding.name.isSingleLine = true  // S'assurer que le texte reste sur une ligne
+                //binding.name.isSingleLine = true  // S'assurer que le texte reste sur une ligne
                 binding.name.ellipsize = TextUtils.TruncateAt.MARQUEE  // Activer le défilement (marquee)
                 binding.name.marqueeRepeatLimit = -1 // Défilement infini
                 binding.name.setHorizontallyScrolling(true)
@@ -108,6 +108,4 @@ class MainMenuButton(context: Context, attrs: AttributeSet?) : FrameLayout(conte
             }
         }
     }
-
-
 }

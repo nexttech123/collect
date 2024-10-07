@@ -150,13 +150,27 @@ android {
         }
     }
 
-    applicationVariants.configureEach { variant ->
+   /* applicationVariants.configureEach { variant ->
         if (variant.getName() == "selfSignedRelease" || variant.getName() == "odkCollectRelease") {
             variant.outputs.configureEach { output ->
                 outputFileName = new File(outputFileName.replace("${variant.getName()}.apk", "${defaultConfig.versionName}.apk"))
             }
         }
+    }*/
+    //Put custom name for debug apk
+    applicationVariants.configureEach { variant ->
+        variant.outputs.configureEach { output ->
+            if (variant.buildType.name == "debug") {
+                // Pour le build debug, on utilise simplement "cultivaSync-debug.apk"
+                outputFileName = "cultivaSync-debug.apk"
+            } else if (variant.buildType.name == "release") {
+                // Pour le build release, on utilise "cultivaSync-release.apk"
+                outputFileName = "cultivaSync-release.apk"
+            }
+        }
     }
+
+
 
     packaging {
         resources {
