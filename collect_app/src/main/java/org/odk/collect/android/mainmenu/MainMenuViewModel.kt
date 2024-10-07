@@ -114,6 +114,7 @@ class MainMenuViewModel(
         }) { }
     }
 
+
     val editableInstancesCount: LiveData<Int>
         get() = instancesDataService.editableCount
 
@@ -122,6 +123,7 @@ class MainMenuViewModel(
 
     val sentInstancesCount: LiveData<Int>
         get() = instancesDataService.sentCount
+
 
     fun setSavedForm(uri: Uri?) {
         if (uri == null) {

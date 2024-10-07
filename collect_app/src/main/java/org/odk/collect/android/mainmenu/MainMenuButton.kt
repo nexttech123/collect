@@ -54,38 +54,36 @@ class MainMenuButton(context: Context, attrs: AttributeSet?) : FrameLayout(conte
     }
 
     fun setNumberOfForms(number: Int) {
-        // Si le nombre est inférieur à 1, pas de texte affiché
+        // Mettre à jour le texte du champ "number" selon la condition
         binding.number.text = if (number < 1) {
             ""
         } else {
-            number.toString()  // Si le nombre est supérieur à 0, afficher le texte
+            number.toString()
         }
 
         @ExperimentalBadgeUtils
         if (highlightable) {
             if (number > 0) {
-                // Si le nombre est supérieur à 0, appliquer le badge et le style
+                // Ajouter le badge et mettre en gras le texte si le nombre est supérieur à 0
+                binding.name.setTypeface(binding.name.typeface, Typeface.BOLD)
+                binding.number.setTypeface(binding.name.typeface, Typeface.BOLD)
+                binding.number.setBackgroundResource(R.drawable.main_button_textview_background)
+               // BadgeUtils.attachBadgeDrawable can be uncommented if needed
                 binding.icon.viewTreeObserver.addOnGlobalLayoutListener {
-                    BadgeUtils.attachBadgeDrawable(badge, binding.icon)  // Afficher le badge
+                    BadgeUtils.attachBadgeDrawable(badge, binding.icon)
                 }
-                binding.name.setTypeface(binding.name.typeface, Typeface.BOLD)  // Mettre le texte en gras
-                binding.number.setTypeface(binding.number.typeface, Typeface.BOLD)  // Mettre le nombre en gras
             } else {
-                // Si le nombre est vide (ou 0), retirer le style et le badge
+                // Détacher le badge et remettre les styles par défaut
                 binding.icon.viewTreeObserver.addOnGlobalLayoutListener {
                     BadgeUtils.detachBadgeDrawable(badge, binding.icon)
-                    binding.number.visibility= INVISIBLE// Retirer le badge
                 }
-                // Remettre le style de police par défaut
                 binding.name.typeface = Typeface.DEFAULT
                 binding.number.typeface = Typeface.DEFAULT
-                // Retirer le background et les styles visuels si nécessaires
-                binding.number.background = null  // Enlever le background si applicable
-                binding.name.background = null    // Retirer également le background de la name si nécessaire
+                binding.number.background = null  // Enlever le background
+                binding.name.background = null    // Enlever également le background de "name" si nécessaire
             }
         }
     }
-
 
 
     fun enableTextOverflowHandling() {

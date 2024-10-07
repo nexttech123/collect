@@ -293,9 +293,9 @@
   <string name="change_server_url">Server URL</string>
   <string name="url_error">Jammer, ongeldige URL!</string>
   <string name="username">Gebruikersnaam</string>
-  <string name="change_username">ODK Gebruikersnaam</string>
+  <string name="change_username">CultivaSnc Gebruikersnaam</string>
   <string name="password">Wagwoord</string>
-  <string name="change_password">ODK Wagwoord</string>
+  <string name="change_password">CultivaSnc Wagwoord</string>
   <string name="font_size">Teks font grootte</string>
   <string name="change_font_size">Teks font grootte</string>
   <string name="font_size_extra_large">Extra Large</string>
@@ -414,7 +414,7 @@
     ##############################################-->
   <!--Section title in settings-->
   <!--Option provided in the Developer tools settings to force an application crash-->
-  <!--An uncaught exception is an exception that is not handled by ODK Collect and so will force the application to close-->
+  <!--An uncaught exception is an exception that is not handled by CultivaSnc Collect and so will force the application to close-->
   <!--##############################################
     # Form saved Snackbar
     ##############################################-->

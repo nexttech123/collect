@@ -172,4 +172,5 @@
     <style name="Theme.Collect.BottomSheet" parent="ThemeOverlay.Material3.BottomSheetDialog">
         <item name="materialButtonStyle">@style/Widget.Collect.Button</item>
     </style>
+
 </resources>

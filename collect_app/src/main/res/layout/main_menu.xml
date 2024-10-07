@@ -45,6 +45,7 @@
                 android:backgroundTint="@color/colorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:highlightable="true"
                 app:layout_constraintTop_toBottomOf="@id/google_drive_deprecation_banner" />
 
             <org.odk.collect.android.mainmenu.MainMenuButton
@@ -58,7 +59,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/enter_data"
                 app:layout_constraintWidth_percent="0.5"
-                app:name="@string/review_data" />
+                app:name="@string/review_data"
+                app:highlightable="true"
+                />
 
             <org.odk.collect.android.mainmenu.MainMenuButton
                 android:id="@+id/send_data"
@@ -83,6 +86,7 @@
                 app:layout_constraintEnd_toEndOf="@id/review_data"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/send_data"
+                app:highlightable="true"
                 app:name="@string/view_sent_forms" />
 
             <org.odk.collect.android.mainmenu.MainMenuButton
@@ -107,6 +111,7 @@
                 app:layout_constraintEnd_toEndOf="@id/view_sent_forms"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/get_forms"
+                app:highlightable="true"
                 app:name="@string/manage_files" />
 
             <TextView
@@ -120,7 +125,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/manage_forms"
-                tools:text="ODK Collect v2022.3" />
+                tools:text="CutivaSync Collect v2022.3" />
 
             <TextView
                 android:id="@+id/version_sha"
